@@ -84,8 +84,16 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Adejoke &amp; Oluwatobi</h1>
 							<h2>We Are Getting Married</h2>
-							<!-- <div class="simply-countdown simply-countdown-one"></div>
-							<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p> -->
+							<!-- <div class="simply-countdown simply-countdown-one"></div> -->
+
+							<div class="timer text-center">
+                                <div class="days counter"></div>
+                                <div class="hours counter"></div>
+                                <div class="minutes counter"></div>
+                                <div class="seconds counter"></div>
+                            </div>
+
+							<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p>
 						</div>
 					</div>
 				</div>
@@ -100,30 +108,49 @@
 					<h2>Hello!</h2>
 					<h3>November 1st, 2024. Ile-Ife, Osun State</h3>
 					<p>	Adejoke and Oluwatobi  are getting hitched!
-						With so much excitement in our heart we invite you to be a part of our wedding ceremony.</p>
+						With so much excitement in our heart we invite you to be a part of our wedding ceremony.
+						We Welcome to our wedding website, we can’t wait to celebrate our special day with you.
+						We’ve created this website as a convenient and interactive way to share all of the important details with you in the lead up to our wedding.
+					</p>
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
 				<div class="couple-half">
-					<div class="groom">
+					<div style="padding-right: 6%;" class="groom">
 						<img src="images/groom.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
-						<h3>Oluwatobi</h3>
+						<h3>Oluwatobi</h3>				
+					</div>
+					<div>
 						<p>
-							Welcome to our wedding website, we can’t wait to celebrate our special day with you.							
+							My Dearest Adejoke, 
+							As our wedding day approaches, I find myself filled with gladness and anticipation. I feel so blessed to have you in my life, and I can hardly wait to call you my wife. You are the love of my life, my closest friend, and the one person I want to spend every moment with.
+							From the very beginning, you’ve brought a light into my world that I didn’t know I was missing. Your kindness, your laughter, and your heart have become the foundation of my happiness. With you, I know I’ve found someone who understands me completely, who inspires me to be the best version of myself, and who will always be by my side.
+							I promise to honor, cherish, and love you for the rest of our lives. <br/>
+							<span style="font-weight: bold;">Forever yours<br/>
+							Apple.</span>
+						</p>
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
-				<div class="couple-half">
+				<div style="padding-left: 4%;" class="couple-half">
 					<div class="bride">
 						<img src="images/bride.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
-						<h3>Adejoke</h3>
+						<h3>Adejoke</h3>						
+					</div>
+					<div>
 						<p>
-							We’ve created this website as a convenient and interactive way to share all of the important details with you in the lead up to our wedding.						</p>
-
+							Dear Apple, 
+							I’m grateful you are thoughtful, I’m grateful you are understanding, I’m grateful you are so much fun to be around, but most of all I’m grateful you are my man.							
+							With every beat of my heart, I love you more and more. You’re the rhythm that keeps me steady on the march through life.							
+							The little years I have spent knowing you has made me a better person.  Your gentleness and paitence in nurturing me is certainly the best fit for me. 							
+							Doing forever with you gladdens my heart and brings me peace that goes beyond words. 							
+							When you need someone to be there for you, I’ll be right there by your side always! I Love you!!<br/>							
+							<span style="font-weight: bold;">Your Girl<br/>
+							Adejoke</span>
 						</p>
 					</div>
 				</div>
@@ -288,10 +315,11 @@
 
 				</div>
 
-				<div class="col-md-6 animate-box">
-					<div class="fh5co-video fh5co-bg" style="background-image: url(images/invite.jpeg); ">
+				<div style="margin-top:70px" class="col-md-6 animate-box">
+					<img style="width:100%" src="images/invite.jpeg"/>
+					<!-- <div class="fh5co-video fh5co-bg">
 						<div class="overlay"></div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -347,8 +375,15 @@
 	<script>
     // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
 
-	var d = new Date(new Date().getTime() + 80 * 120 * 120 * 2000);
+	var today = new Date(new Date().getTime());
 
+	var wed = new Date("1 November 2024 11:00:00 GMT+01:00");
+
+	var d = new Date(wed - today);
+
+	console.log("Today is "+today);
+
+	console.log("Wedding Day is "+wed);
 
 	console.log("Date is "+d);
 
@@ -366,6 +401,43 @@
         day: d.getDate(),
         enableUtc: false
     });
+
+
+
+	function makeTimer() {
+
+//		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
+        var endTime = new Date("1 November 2024 9:56:00 GMT+01:00");			
+        endTime = (Date.parse(endTime) / 1000);
+
+        var now = new Date();
+        now = (Date.parse(now) / 1000);
+
+        var timeLeft = endTime - now;
+
+        var days = Math.floor(timeLeft / 86400); 
+        var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+        var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+        var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+        if (hours < "10") { hours = "0" + hours; }
+        if (minutes < "10") { minutes = "0" + minutes; }
+        if (seconds < "10") { seconds = "0" + seconds; }
+
+        if(days > 1){
+            $(".days").html(days + "<br><span class='suffice'>Days</span>");
+        }
+        else{
+            $(".days").html(days + "<br><span class='suffice'>Day</span>");
+        }
+        $(".hours").html(hours + "<br><span class='suffice'>Hours</span>");
+        $(".minutes").html(minutes + "<br><span class='suffice'>Minutes</span>");
+        $(".seconds").html(seconds + "<br><span class='suffice'>Seconds</span>");		
+
+}
+
+setInterval(function() { makeTimer(); }, 1000);
+
 </script>
 
 	</body>

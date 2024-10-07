@@ -949,6 +949,40 @@ form label {
   margin-bottom: 2em;
 }
 
+.timer {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  /* background: #222; */
+  font-weight: 100;
+  /* display: flex; */
+  line-height: 1;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.counter{
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  background: #ad9725;
+  /* margin: 0 4px; */
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 1s ease infinite;
+  padding: 2%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.suffice{
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+
 .simply-countdown > .simply-section {
   /* coutndown blocks */
   display: inline-block;
