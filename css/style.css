@@ -328,14 +328,14 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 100vh;
   display: table;
   width: 100%;
-  padding-top: 20%;
+  padding-top: 15%;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
     /* height: 600px; */
     height: 100vh;
-    padding-top: 40%;
+    padding-top: 25%;
 
   }
 }
@@ -1239,7 +1239,7 @@ form label {
   .fh5co-heading h2 {
     font-size: 40px;
     padding-top: 10%;
-    
+
   }
 }
 .fh5co-heading p {
