@@ -853,8 +853,8 @@ form label {
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
   margin-bottom: 0px;
-  font-size: 100px;
-  line-height: 1.5;
+  font-size: 80px;
+  /* line-height: 1.5; */
   font-family: "Sacramento", Arial, serif;
 }
 @media screen and (max-width: 768px) {
@@ -1238,6 +1238,8 @@ form label {
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
     font-size: 40px;
+    padding-top: 10%;
+    
   }
 }
 .fh5co-heading p {
